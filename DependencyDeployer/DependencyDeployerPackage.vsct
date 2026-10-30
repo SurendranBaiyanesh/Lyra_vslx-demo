@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Commands package="guidDependencyDeployerPackage">
+    <Buttons>
+      <Button guid="guidDependencyDeployerCmdSet" id="DeployCommand" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_BUILD"/>
+        <Icon guid="ImageCatalogGuid" id="DownloadNoColor"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Deploy Dependencies</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <CommandPlacements>
+    <!-- also on the solution node: deploys every project in the solution -->
+    <CommandPlacement guid="guidDependencyDeployerCmdSet" id="DeployCommand" priority="0x0100">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_BUILD"/>
+    </CommandPlacement>
+  </CommandPlacements>
+  <Symbols>
+    <GuidSymbol name="guidDependencyDeployerPackage" value="{a3f5b7d2-1c4e-4f8a-9b6d-0e2c8f1a7b35}"/>
+    <GuidSymbol name="guidDependencyDeployerCmdSet" value="{d81e4c6a-5b2f-4a9e-8c3d-7f0b1e6a2c94}">
+      <IDSymbol name="DeployCommand" value="0x0100"/>
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
